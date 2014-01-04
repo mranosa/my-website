@@ -14,8 +14,10 @@
         <!-- build:css({.tmp,app}) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
+
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css">
 </head>
-  <body ng-app="myWebsiteApp">
+  <body ng-app="myWebsiteApp" ng-controller="SuperCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -26,30 +28,43 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="logo sidebar-icons">
-        <h4><a href="#">Code <strong>Junkie</strong></a></h4>
-    </div>
-    <nav id="sidebar" class="sidebar nav-collapse collapse sidebar-icons">
-        <ul id="side-nav" class="side-nav sidebar-icons">
-            <li class="active">
-                <a href="index.html"><i class="fa fa-home"></i> <span class="name">Dashboard</span></a>
-            </li>
-            <li>
-                <a href="index.html"><i class="fa fa-home"></i> <span class="name">Dashboard</span></a>
-            </li>
-            <li>
-                <a href="index.html"><i class="fa fa-home"></i> <span class="name">Dashboard</span></a>
-            </li>
-            <li>
-                <a href="index.html"><i class="fa fa-home"></i> <span class="name">Dashboard</span></a>
-            </li>
-            <li>
-                <a href="index.html"><i class="fa fa-home"></i> <span class="name">Dashboard</span></a>
-            </li>
-        </ul>
-    </nav>
 
-    <div ng-view="" class="wrap sidebar-icons"></div>
+    <div class="single-widget-container error-page" 
+        ng-class="{'animated fadeOut' : hideLoading}">
+        <section class="widget transparent widget-404">
+            <div class="body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-align-center">Loading...</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div>
+        <div class="logo" 
+            ng-class="{'animated bounceInDown' : showIcon}" 
+            ng-show="showIcon">
+            <h4><a href="#">Code <strong>Junkie</strong></a></h4>
+        </div>
+        <nav id="sidebar" class="sidebar nav-collapse collapse" 
+            ng-class="{'animated bounceInLeft' : showNav}"
+            ng-show="showNav">
+            <ul id="side-nav" class="side-nav" ng-controller="NavCtrl">
+
+                <li ng-repeat="nav in navs" class="{{nav.navCls}}">
+                    <a href="{{nav.url}}"><i class="{{nav.icon}}"></i> <span class="name">{{nav.name}}</span></a>
+                </li>   
+
+            </ul>
+        </nav>
+    </div>
+
+    <div ng-class="{'animated bounceInRight' : showView}" 
+        ng-show="showView">
+        <div ng-view="" class="wrap"></div>
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -85,11 +100,16 @@
         <script src="bower_components/angular-cookies/angular-cookies.js"></script>
         <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
         <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/underscore/underscore.js"></script>
+        <script src="bower_components/angular-underscore/angular-underscore.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/nav.js"></script>
+        <script src="scripts/controllers/super.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -4,7 +4,9 @@ angular.module('myWebsiteApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'ngAnimate',
+  'angular-underscore'
 ])
   .config(function ($routeProvider) {
     $routeProvider
