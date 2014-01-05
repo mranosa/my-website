@@ -4,21 +4,25 @@ angular.module('myWebsiteApp')
 	.controller('NavCtrl', function($scope, $location) {
 
 		$scope.navs = [{
-			name: 'My Portal',
-			url: '#/home',
-			icon: 'fa fa-home'
+			name: 'About Me',
+			url: '#/about',
+			icon: 'fa fa-meh-o'
 		}, {
-			name: 'Purchase Order',
-			url: '#/purchaseOrder/list',
-			icon: 'fa fa-home'
+			name: 'Work Experience',
+			url: '#/work',
+			icon: 'fa fa-calendar'
 		}, {
-			name: 'Product Booking',
-			url: '#/booking',
-			icon: 'fa fa-home'
+			name: 'Project History',
+			url: '#/project',
+			icon: 'fa fa-briefcase'
 		}, {
-			name: 'Load Builder',
-			url: '#/builder',
-			icon: 'fa fa-home'
+			name: 'Tech Skills',
+			url: '#/skill',
+			icon: 'fa fa-pencil-square-o'
+		}, {
+			name: 'Blog and Rants',
+			url: '#/blog',
+			icon: 'fa fa-files-o'
 		}];
 
 		$scope.updateActiveNav = function() {
