@@ -26,11 +26,11 @@
 @import "lib/nestable";
 
 @import "svg";
-
 @import "general";
-
 @import "base";
-
 @import "responsive";
-
 @import "print";
+
+.view-transition.ng-enter {
+	animation: fadeInLeft 1s;
+}
