@@ -15,8 +15,8 @@ angular.module('myWebsiteApp')
 				$scope.hideLoading = true;			
 				$timeout(function() {
 					$scope.showView = true;
-				}, 1000);
-			}, 1000);
+				}, 500);
+			}, 500);
 			
-		}, 2000);
+		}, 1000);
 	});
