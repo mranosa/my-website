@@ -4,9 +4,9 @@ angular.module('myWebsiteApp')
 	.controller('NavCtrl', function($scope, $location) {
 
 		$scope.navs = [{
-			name: 'About Me',
-			url: '#/about',
-			icon: 'fa fa-meh-o'
+			name: 'Blog and Rants',
+			url: '#/blog',
+			icon: 'fa fa-files-o'
 		}, {
 			name: 'Work Experience',
 			url: '#/work',
@@ -15,14 +15,16 @@ angular.module('myWebsiteApp')
 			name: 'Project History',
 			url: '#/project',
 			icon: 'fa fa-briefcase'
-		}, {
-			name: 'Tech Skills',
-			url: '#/skill',
-			icon: 'fa fa-pencil-square-o'
-		}, {
-			name: 'Blog and Rants',
-			url: '#/blog',
-			icon: 'fa fa-files-o'
+		}, 
+		// {
+		// 	name: 'Tech Skills',
+		// 	url: '#/skill',
+		// 	icon: 'fa fa-pencil-square-o'
+		// }, 
+		{
+			name: 'About Me',
+			url: '#/about',
+			icon: 'fa fa-meh-o'
 		}];
 
 		$scope.updateActiveNav = function() {

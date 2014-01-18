@@ -1390,7 +1390,7 @@ input, textarea{
   margin-top: 20px;
 }
 
-.the-icons li{
+.the-icons span{
   line-height: 40px;
   i{
     @include transition(font-size .2s);

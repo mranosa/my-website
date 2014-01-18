@@ -11,8 +11,8 @@ angular.module('myWebsiteApp', [
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+        templateUrl: 'views/blog.html',
+        controller: 'BlogCtrl'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
